@@ -33,6 +33,4 @@ A channel is available only when the source actually supports it. The tool does 
 
 Extraction targets the original selected 8-bit channel values, not a resized or automatically gamma-adjusted version. The pipeline verifies byte-level output and, when available, imported Source Art. Unreal's GPU compression, mipmaps, and preview display may still look different; pixel-source fidelity and GPU appearance are **separate** questions.
 
-**Smart Naming** (suggesting `_Roughness` from a recognized `_ORM`) is a planned feature and **not** currently applied. The present suffix defaults are channel letters and Alpha/Gray.
-
 [Channel Shuffle](channel-shuffle.md) · [Compatibility](../compatibility.md)
