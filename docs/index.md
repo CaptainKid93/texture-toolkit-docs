@@ -25,6 +25,3 @@ Texture Toolkit brings focused `Texture2D` operations into **Unreal Editor's Con
 - Output locations and the effect on original assets depend on the operation; read the operation guide before execution.
 
 Start with [Installation](installation.md), then follow the [first workflow](getting-started.md). For current support boundaries, see [Compatibility & Limitations](compatibility.md).
-
-!!! note "Planned features are not included"
-    Smart Naming, HDR/EXR processing and multi-source channel packing are **not** advertised as available. The former Channel Composer operation has been retired.
