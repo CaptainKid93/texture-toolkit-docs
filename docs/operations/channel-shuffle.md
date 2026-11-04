@@ -28,6 +28,4 @@ For an RGBA source you can map **output R ← source G**, **output G ← source 
 - GPU compression, mipmaps and filtering can still affect the visible result. Visual identity to the source is **not** guaranteed.
 - On success, **Show in Content Browser** can locate the created asset.
 
-There is no separate **Channel Composer** or multi-source packing workflow in this version.
-
 [Extract Channel](extract-channel.md) · [Troubleshooting](../troubleshooting.md)
