@@ -1,0 +1,60 @@
+site_name: Texture Toolkit for Unreal Artists
+site_description: Editor-only Texture2D workflows for Unreal Engine artists
+site_url: https://captainkid93.github.io/texture-toolkit-docs/
+repo_url: https://github.com/CaptainKid93/texture-toolkit-docs
+repo_name: CaptainKid93/texture-toolkit-docs
+edit_uri: edit/main/docs/
+docs_dir: docs
+site_dir: site
+strict: true
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Overview: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - First workflow: getting-started.md
+  - Operations:
+      - Export: operations/export.md
+      - Resize: operations/resize.md
+      - Strip Alpha: operations/strip-alpha.md
+      - Extract Channel: operations/extract-channel.md
+      - Channel Shuffle: operations/channel-shuffle.md
+  - Settings: settings.md
+  - Troubleshooting: troubleshooting.md
+  - Compatibility & Limitations: compatibility.md
+
+copyright: "Texture Toolkit for Unreal Artists | Documentation for the private beta"
