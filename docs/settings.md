@@ -24,8 +24,6 @@ The current Naming section includes:
 
 The QA naming settings do **not** automatically rename textures, force an output name or enable a standalone Renamer.
 
-**Smart Naming** (configurable output suffix presets and packed ORM/RMA name suggestions) is **planned**, not implemented in this private-beta build.
-
 ## Saving preferences
 
 Artist overrides are stored within the project under `Saved/TextureToolkit/settings.json`. Project defaults are stored in the plugin configuration. Use **Save Settings** or **Restore Project Defaults** as appropriate.
