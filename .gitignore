@@ -1,0 +1,7 @@
+# MkDocs-generated output
+site/
+
+# Python temporary data
+__pycache__/
+*.pyc
+.venv/
