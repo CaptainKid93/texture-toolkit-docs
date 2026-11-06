@@ -1,0 +1,282 @@
+/* Texture Toolkit docs: same visual language as the Slate popups.
+   Layered greys, borderless fields, small radii, sentence-case labels,
+   and ONE accent used only as a 1 px border (current page, focus, primary button, link underline). */
+
+/* ---------- Tokens ---------- */
+:root,
+[data-md-color-scheme="slate"] {
+  --tt-bg: #141414;
+  --tt-panel: #1c1c1c;
+  --tt-field: #242424;
+  --tt-hover: #2b2b2b;
+  --tt-active: #2f2f2f;
+  --tt-border: #2a2a2a;
+  --tt-text: #ececec;
+  --tt-muted: #9a9a9a;
+  --tt-disabled: #6b6b6b;
+  --tt-accent: #d6e04a;
+  --tt-warn: #e8c55a;
+  --tt-err: #ef7b6e;
+  --tt-radius: 4px;
+  --tt-radius-lg: 8px;
+  --tt-dots: #262626;
+
+  --md-default-bg-color: var(--tt-bg);
+  --md-default-bg-color--light: rgba(20, 20, 20, .54);
+  --md-default-bg-color--lighter: rgba(20, 20, 20, .26);
+  --md-default-bg-color--lightest: rgba(20, 20, 20, .07);
+  --md-default-fg-color: var(--tt-text);
+  --md-default-fg-color--light: var(--tt-muted);
+  --md-default-fg-color--lighter: var(--tt-disabled);
+  --md-default-fg-color--lightest: var(--tt-border);
+  --md-primary-fg-color: var(--tt-panel);
+  --md-primary-fg-color--light: var(--tt-field);
+  --md-primary-fg-color--dark: var(--tt-bg);
+  --md-primary-bg-color: var(--tt-text);
+  --md-primary-bg-color--light: var(--tt-muted);
+  --md-accent-fg-color: var(--tt-accent);
+  --md-accent-fg-color--transparent: rgba(214, 224, 74, .1);
+  --md-accent-bg-color: var(--tt-bg);
+  --md-accent-bg-color--light: rgba(20, 20, 20, .7);
+  --md-code-bg-color: var(--tt-field);
+  --md-code-fg-color: var(--tt-text);
+  --md-typeset-color: var(--tt-text);
+  --md-typeset-a-color: var(--tt-text);
+  --md-typeset-table-color: var(--tt-border);
+  --md-typeset-table-color--light: #1f1f1f;
+  --md-footer-bg-color: var(--tt-panel);
+  --md-footer-bg-color--dark: var(--tt-bg);
+  --md-footer-fg-color: var(--tt-text);
+  --md-footer-fg-color--light: var(--tt-muted);
+  --md-footer-fg-color--lighter: var(--tt-disabled);
+  --md-admonition-bg-color: var(--tt-panel);
+  --md-admonition-fg-color: var(--tt-text);
+  --md-shadow-z1: none;
+  --md-shadow-z2: none;
+  --md-shadow-z3: 0 8px 24px rgba(0, 0, 0, .4);
+}
+
+/* Optional light theme: lime is too pale on white, so the accent border becomes a darker olive. */
+[data-md-color-scheme="default"] {
+  --tt-bg: #fafafa;
+  --tt-panel: #ffffff;
+  --tt-field: #f0f0f0;
+  --tt-hover: #e8e8e8;
+  --tt-active: #e0e0e0;
+  --tt-border: #e2e2e2;
+  --tt-text: #1a1a1a;
+  --tt-muted: #5c5c5c;
+  --tt-disabled: #8a8a8a;
+  --tt-accent: #7a8412;
+  --tt-warn: #8a6a00;
+  --tt-err: #b3382c;
+  --tt-dots: #e6e6e6;
+
+  --md-default-bg-color: var(--tt-bg);
+  --md-default-fg-color: var(--tt-text);
+  --md-default-fg-color--light: var(--tt-muted);
+  --md-default-fg-color--lighter: var(--tt-disabled);
+  --md-default-fg-color--lightest: var(--tt-border);
+  --md-primary-fg-color: var(--tt-panel);
+  --md-primary-fg-color--light: var(--tt-field);
+  --md-primary-fg-color--dark: var(--tt-bg);
+  --md-primary-bg-color: var(--tt-text);
+  --md-primary-bg-color--light: var(--tt-muted);
+  --md-accent-fg-color: var(--tt-accent);
+  --md-accent-fg-color--transparent: rgba(122, 132, 18, .1);
+  --md-code-bg-color: var(--tt-field);
+  --md-code-fg-color: var(--tt-text);
+  --md-typeset-color: var(--tt-text);
+  --md-typeset-a-color: var(--tt-text);
+  --md-typeset-table-color: var(--tt-border);
+  --md-typeset-table-color--light: #f7f7f7;
+  --md-footer-bg-color: var(--tt-panel);
+  --md-footer-bg-color--dark: var(--tt-bg);
+  --md-footer-fg-color: var(--tt-text);
+  --md-footer-fg-color--light: var(--tt-muted);
+  --md-shadow-z1: none;
+  --md-shadow-z2: none;
+}
+
+/* ---------- Header, tabs, search ---------- */
+.md-header,
+.md-tabs {
+  background-color: var(--tt-panel);
+  color: var(--tt-text);
+  box-shadow: none;
+}
+.md-header { border-bottom: 0; }
+.md-tabs { border-bottom: 1px solid var(--tt-border); }
+.md-header__title { font-weight: 700; }
+/* Discreet "Private Beta" badge next to the site name (CSS only, no template override) */
+.md-header__title .md-header__topic:first-child .md-ellipsis::after {
+  content: "Private Beta";
+  display: inline-block;
+  margin-left: .75rem;
+  padding: 0 .55rem;
+  font-size: .62rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  color: var(--tt-muted);
+  background: var(--tt-field);
+  border: 1px solid var(--tt-border);
+  border-radius: 999px;
+  vertical-align: middle;
+}
+.md-tabs__link { opacity: 1; color: var(--tt-muted); font-size: .7rem; }
+.md-tabs__link:hover { color: var(--tt-text); }
+.md-tabs__item--active .md-tabs__link {
+  color: var(--tt-text);
+  box-shadow: inset 0 -2px 0 var(--tt-accent);
+  padding-bottom: .5rem;
+  margin-top: .6rem;
+}
+[data-md-color-scheme] .md-search__form { background-color: var(--tt-field); border-radius: var(--tt-radius); box-shadow: none; }
+.md-search__form:hover { background-color: var(--tt-hover); }
+.md-search__input::placeholder, .md-search__icon { color: var(--tt-muted); }
+.md-search__output { background-color: var(--tt-panel); border: 1px solid var(--tt-border); border-radius: 0 0 var(--tt-radius) var(--tt-radius); }
+
+/* ---------- Sidebar navigation ---------- */
+.md-nav__link { color: var(--tt-muted); }
+.md-nav__link:hover { color: var(--tt-text); }
+.md-nav__item .md-nav__link--active,
+.md-nav__item .md-nav__link--active:hover {
+  color: var(--tt-text);
+  background: var(--tt-active);
+  border-left: 2px solid var(--tt-accent);
+  border-radius: 0 var(--tt-radius) var(--tt-radius) 0;
+  padding-left: .6rem;
+  margin-left: -.6rem;
+}
+.md-nav--secondary .md-nav__link--active { background: none; border-left: 0; padding-left: 0; margin-left: 0; box-shadow: inset 2px 0 0 var(--tt-accent); padding-left: .6rem; }
+.md-nav__title { color: var(--tt-text); font-weight: 600; }
+
+/* ---------- Typography ---------- */
+.md-typeset { font-size: .8rem; line-height: 1.6; }
+.md-typeset h1 { color: var(--tt-text); font-weight: 700; font-size: 2.2em; letter-spacing: 0; margin-bottom: .8em; }
+.md-typeset h2 { font-weight: 700; font-size: 1.55em; margin: 2em 0 .8em; padding-bottom: .35em; border-bottom: 1px solid var(--tt-border); }
+.md-typeset h3 { font-weight: 600; font-size: 1.15em; }
+.md-typeset hr { border-bottom: 1px solid var(--tt-border); }
+
+/* Links: text stays neutral, the accent is the underline (a 1 px border) */
+.md-typeset a:not(.md-button):not(.headerlink):not(.md-annotation__index) {
+  color: var(--tt-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--tt-accent);
+}
+.md-typeset a:not(.md-button):not(.headerlink):hover { background: var(--tt-field); }
+.md-typeset .headerlink { color: var(--tt-disabled); }
+.md-typeset .headerlink:hover { color: var(--tt-text); }
+:focus-visible { outline: 2px solid var(--tt-accent); outline-offset: 2px; border-radius: 2px; }
+
+/* ---------- Buttons ---------- */
+.md-typeset .md-button {
+  color: var(--tt-text);
+  background: var(--tt-field);
+  border: 1px solid var(--tt-field);
+  border-radius: var(--tt-radius);
+  font-weight: 500;
+  padding: .55em 1.3em;
+  box-shadow: none;
+}
+.md-typeset .md-button:hover { color: var(--tt-text); background: var(--tt-hover); border-color: var(--tt-hover); }
+.md-typeset .md-button:active { background: var(--tt-active); }
+.md-typeset .md-button--primary { border-color: var(--tt-accent); font-weight: 600; }
+.md-typeset .md-button--primary:hover { border-color: var(--tt-accent); background: var(--tt-hover); }
+
+/* ---------- Code ---------- */
+.md-typeset code { background: var(--tt-field); border-radius: 3px; color: var(--tt-text); }
+.md-typeset pre > code { background: var(--tt-panel); border: 1px solid var(--tt-border); border-radius: var(--tt-radius); }
+.md-typeset .highlight { border-radius: var(--tt-radius); }
+
+/* ---------- Tables ---------- */
+.md-typeset__table { display: block; max-width: 100%; }
+.md-typeset table:not([class]) { display: table; width: 100%; border: 1px solid var(--tt-border); border-collapse: separate; border-spacing: 0; border-radius: var(--tt-radius); background: transparent; box-shadow: none; font-size: .72rem; }
+.md-typeset table:not([class]) th:first-child { border-top-left-radius: var(--tt-radius); }
+.md-typeset table:not([class]) th:last-child { border-top-right-radius: var(--tt-radius); }
+.md-typeset table:not([class]) th { background: var(--tt-field); color: var(--tt-muted); font-weight: 600; }
+.md-typeset table:not([class]) td { border-top: 1px solid var(--tt-border); }
+.md-typeset table:not([class]) tbody tr:hover { background: var(--tt-panel); box-shadow: none; }
+
+/* ---------- Admonitions: neutral by default, semantic colors only on the left border ---------- */
+.md-typeset :is(.admonition, details) {
+  background: var(--tt-panel);
+  border: 1px solid var(--tt-border);
+  border-left: 3px solid var(--tt-muted);
+  border-radius: var(--tt-radius);
+  box-shadow: none;
+  font-size: .76rem;
+}
+.md-typeset :is(.admonition, details) > :is(.admonition-title, summary) { background-color: transparent; font-weight: 600; }
+.md-typeset :is(.admonition, details) > :is(.admonition-title, summary)::before { background-color: var(--tt-muted); }
+.md-typeset :is(.admonition, details):is(.note, .abstract, .info, .todo, .question, .example, .quote) { border-color: var(--tt-border); border-left-color: var(--tt-muted); }
+.md-typeset :is(.admonition, details):is(.tip, .hint, .important, .success, .check, .done) { border-color: var(--tt-border); border-left-color: var(--tt-accent); }
+.md-typeset :is(.admonition, details):is(.warning, .caution, .attention) { border-color: var(--tt-border); border-left-color: var(--tt-warn); }
+.md-typeset :is(.admonition, details):is(.warning, .caution, .attention) > :is(.admonition-title, summary)::before { background-color: var(--tt-warn); }
+.md-typeset :is(.admonition, details):is(.danger, .error, .failure, .fail, .missing, .bug) { border-color: var(--tt-border); border-left-color: var(--tt-err); }
+.md-typeset :is(.admonition, details):is(.danger, .error, .failure, .fail, .missing, .bug) > :is(.admonition-title, summary)::before { background-color: var(--tt-err); }
+
+/* ---------- Figures and screenshots ---------- */
+.md-typeset figure { margin: 1.5em 0; }
+.md-typeset figure img, .md-typeset img { border-radius: var(--tt-radius-lg); }
+.md-typeset figure > img { border: 1px solid var(--tt-border); }
+.md-typeset figcaption { color: var(--tt-muted); font-size: .68rem; font-style: normal; max-width: none; margin: .6rem 0 0; text-align: left; }
+.md-typeset figure.tt-shot { display: block; width: 100%; }
+.tt-shot--placeholder .tt-shot__box {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .2rem;
+  min-height: 12rem; padding: 1rem; text-align: center;
+  color: var(--tt-muted); font-size: .7rem;
+  background: var(--tt-panel); border: 1px dashed var(--tt-disabled); border-radius: var(--tt-radius-lg);
+}
+.tt-shot--placeholder strong { color: var(--tt-muted); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; }
+
+/* ---------- Footer / prev-next ---------- */
+.md-footer { border-top: 1px solid var(--tt-border); }
+.md-footer__link:hover { background: var(--tt-field); }
+.md-copyright { color: var(--tt-muted); }
+
+/* ---------- Homepage ---------- */
+.tt-hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem); gap: 2.5rem; align-items: center;
+  margin: 0 0 2rem; padding: 2.5rem 0 2rem;
+  background-image: radial-gradient(var(--tt-dots) 1px, transparent 1px); background-size: 14px 14px;
+  border-bottom: 1px solid var(--tt-border);
+}
+.tt-hero__logo { width: 72px; height: 72px; border-radius: 0; }
+.tt-hero h1 { margin: 1rem 0 .6rem; font-size: 2.6em; line-height: 1.1; }
+.tt-status { background: var(--tt-panel); border: 1px solid var(--tt-border); border-radius: var(--tt-radius-lg); padding: .4rem 1.2rem 1rem; font-size: .72rem; }
+.tt-status table:not([class]) { border: 0; }
+.tt-status table:not([class]) thead { display: none; }
+.tt-status table:not([class]) td { padding: .35rem 1rem .35rem 0; }
+.tt-status table:not([class]) td:first-child { color: var(--tt-muted); }
+.tt-badge { display: inline-block; margin-left: .4rem; padding: 0 .6rem; border: 1px solid var(--tt-border); border-radius: 999px; background: var(--tt-field); color: var(--tt-muted); font-size: .62rem; line-height: 1.5rem; vertical-align: middle; }
+.tt-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
+.tt-cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tt-card { background: var(--tt-panel); border: 1px solid var(--tt-border); border-radius: var(--tt-radius-lg); padding: 1rem 1.2rem; }
+.tt-card:hover { background: var(--tt-field); }
+.tt-card p { margin: .3em 0; color: var(--tt-muted); font-size: .74rem; }
+.tt-card strong { color: var(--tt-text); font-size: .9rem; }
+.tt-card--note { border-style: dashed; }
+.tt-ic { display: inline-block; width: 24px; height: 24px; background-color: #cfcfcf; -webkit-mask: var(--tt-icon) center / contain no-repeat; mask: var(--tt-icon) center / contain no-repeat; }
+[data-md-color-scheme="default"] .tt-ic { background-color: #5c5c5c; }
+.tt-ic--export { --tt-icon: url("../assets/icons/export.svg"); }
+.tt-ic--resize { --tt-icon: url("../assets/icons/resize.svg"); }
+.tt-ic--strip-alpha { --tt-icon: url("../assets/icons/strip-alpha.svg"); }
+.tt-ic--extract-channel { --tt-icon: url("../assets/icons/extract-channel.svg"); }
+.tt-ic--channel-shuffle { --tt-icon: url("../assets/icons/channel-shuffle.svg"); }
+.tt-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 59.9375em) {
+  .tt-hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-top: 1.5rem; }
+  .tt-hero h1 { font-size: 2em; }
+  .tt-cards, .tt-cards--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tt-split { grid-template-columns: minmax(0, 1fr); }
+  .md-header__title .md-header__topic:first-child .md-ellipsis::after { display: none; }
+}
+@media screen and (max-width: 39.9375em) {
+  .tt-cards, .tt-cards--3 { grid-template-columns: minmax(0, 1fr); }
+  .tt-hero .md-button { display: block; text-align: center; margin: .5rem 0 0; }
+  .md-typeset__table { overflow-x: auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
